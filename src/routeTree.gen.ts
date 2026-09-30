@@ -10,11 +10,27 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActivitesRouteImport } from './routes/activites'
+import { Route as CarteRouteImport } from './routes/carte'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as CircuitsIndexRouteImport } from './routes/circuits.index'
+import { Route as CircuitsSlugRouteImport } from './routes/circuits.$slug'
+import { Route as MotosIndexRouteImport } from './routes/motos.index'
+import { Route as MotosSlugRouteImport } from './routes/motos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitesRoute = ActivitesRouteImport.update({
+  id: '/activites',
+  path: '/activites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarteRoute = CarteRouteImport.update({
+  id: '/carte',
+  path: '/carte',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
@@ -22,31 +38,100 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CircuitsIndexRoute = CircuitsIndexRouteImport.update({
+  id: '/circuits/',
+  path: '/circuits/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CircuitsSlugRoute = CircuitsSlugRouteImport.update({
+  id: '/circuits/$slug',
+  path: '/circuits/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MotosIndexRoute = MotosIndexRouteImport.update({
+  id: '/motos/',
+  path: '/motos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MotosSlugRoute = MotosSlugRouteImport.update({
+  id: '/motos/$slug',
+  path: '/motos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/activites': typeof ActivitesRoute
+  '/carte': typeof CarteRoute
   '/api/chat': typeof ApiChatRoute
+  '/circuits/$slug': typeof CircuitsSlugRoute
+  '/motos/$slug': typeof MotosSlugRoute
+  '/circuits/': typeof CircuitsIndexRoute
+  '/motos/': typeof MotosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/activites': typeof ActivitesRoute
+  '/carte': typeof CarteRoute
   '/api/chat': typeof ApiChatRoute
+  '/circuits/$slug': typeof CircuitsSlugRoute
+  '/motos/$slug': typeof MotosSlugRoute
+  '/circuits': typeof CircuitsIndexRoute
+  '/motos': typeof MotosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/activites': typeof ActivitesRoute
+  '/carte': typeof CarteRoute
   '/api/chat': typeof ApiChatRoute
+  '/circuits/$slug': typeof CircuitsSlugRoute
+  '/motos/$slug': typeof MotosSlugRoute
+  '/circuits/': typeof CircuitsIndexRoute
+  '/motos/': typeof MotosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/chat'
+  fullPaths:
+    | '/'
+    | '/activites'
+    | '/carte'
+    | '/api/chat'
+    | '/circuits/$slug'
+    | '/motos/$slug'
+    | '/circuits/'
+    | '/motos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/chat'
-  id: '__root__' | '/' | '/api/chat'
+  to:
+    | '/'
+    | '/activites'
+    | '/carte'
+    | '/api/chat'
+    | '/circuits/$slug'
+    | '/motos/$slug'
+    | '/circuits'
+    | '/motos'
+  id:
+    | '__root__'
+    | '/'
+    | '/activites'
+    | '/carte'
+    | '/api/chat'
+    | '/circuits/$slug'
+    | '/motos/$slug'
+    | '/circuits/'
+    | '/motos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActivitesRoute: typeof ActivitesRoute
+  CarteRoute: typeof CarteRoute
   ApiChatRoute: typeof ApiChatRoute
+  CircuitsSlugRoute: typeof CircuitsSlugRoute
+  MotosSlugRoute: typeof MotosSlugRoute
+  CircuitsIndexRoute: typeof CircuitsIndexRoute
+  MotosIndexRoute: typeof MotosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +143,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activites': {
+      id: '/activites'
+      path: '/activites'
+      fullPath: '/activites'
+      preLoaderRoute: typeof ActivitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carte': {
+      id: '/carte'
+      path: '/carte'
+      fullPath: '/carte'
+      preLoaderRoute: typeof CarteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -65,12 +164,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/circuits/': {
+      id: '/circuits/'
+      path: '/circuits'
+      fullPath: '/circuits/'
+      preLoaderRoute: typeof CircuitsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/circuits/$slug': {
+      id: '/circuits/$slug'
+      path: '/circuits/$slug'
+      fullPath: '/circuits/$slug'
+      preLoaderRoute: typeof CircuitsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/motos/': {
+      id: '/motos/'
+      path: '/motos'
+      fullPath: '/motos/'
+      preLoaderRoute: typeof MotosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/motos/$slug': {
+      id: '/motos/$slug'
+      path: '/motos/$slug'
+      fullPath: '/motos/$slug'
+      preLoaderRoute: typeof MotosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActivitesRoute: ActivitesRoute,
+  CarteRoute: CarteRoute,
   ApiChatRoute: ApiChatRoute,
+  CircuitsSlugRoute: CircuitsSlugRoute,
+  MotosSlugRoute: MotosSlugRoute,
+  CircuitsIndexRoute: CircuitsIndexRoute,
+  MotosIndexRoute: MotosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
