@@ -99,7 +99,9 @@ export const DEMO_CREDENTIALS = { email: DEMO.email, password: DEMO.password };
 const listeners = new Set<() => void>();
 export function subscribeAuth(fn: () => void) {
   listeners.add(fn);
-  return () => listeners.delete(fn);
+  return () => {
+    listeners.delete(fn);
+  };
 }
 function notify() {
   listeners.forEach((l) => l());
