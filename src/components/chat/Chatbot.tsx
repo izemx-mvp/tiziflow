@@ -47,6 +47,7 @@ export function Chatbot() {
       const id = setTimeout(() => setTooltip(true), 8000);
       return () => clearTimeout(id);
     }
+    return undefined;
   }, []);
 
   useEffect(() => {
