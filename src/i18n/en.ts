@@ -89,7 +89,7 @@ export const en: Dict = {
     faqTitle: "Frequent",
     faqFlow: "questions",
     ctaTitle: "Ready to ride the Atlas?",
-    ctaBook: "Book now",
+    ctaBookNow: "Book now",
     ctaWhatsapp: "Message on WhatsApp",
   },
   faq: [

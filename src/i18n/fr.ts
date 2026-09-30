@@ -91,7 +91,7 @@ export const fr = {
     faqTitle: "Questions",
     faqFlow: "fréquentes",
     ctaTitle: "Prêt à rouler dans l'Atlas ?",
-    ctaBook: "Réserver maintenant",
+    ctaBookNow: "Réserver maintenant",
     ctaWhatsapp: "Écrire sur WhatsApp",
   },
   faq: [
@@ -175,4 +175,5 @@ export const fr = {
   },
 } as const;
 
-export type Dict = typeof fr;
+type Widen<T> = T extends string ? string : T extends readonly (infer U)[] ? readonly Widen<U>[] : { [K in keyof T]: Widen<T[K]> };
+export type Dict = Widen<typeof fr>;

@@ -510,7 +510,7 @@ function CtaBand() {
         <h2 className="h-section max-w-2xl">{t.home.ctaTitle}</h2>
         <div className="flex flex-wrap justify-center gap-3">
           <TfLink to="/reservation" variant="white" size="lg" withArrow>
-            {t.home.ctaBook}
+            {t.home.ctaBookNow}
           </TfLink>
           <TfAnchor
             href={whatsappLink()}

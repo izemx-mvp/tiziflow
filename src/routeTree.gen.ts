@@ -10,8 +10,16 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as ActivitesRouteImport } from './routes/activites'
 import { Route as CarteRouteImport } from './routes/carte'
+import { Route as CgvRouteImport } from './routes/cgv'
+import { Route as CompteRouteImport } from './routes/compte'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
+import { Route as ConnexionRouteImport } from './routes/connexion'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as ReservationRouteImport } from './routes/reservation'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as CircuitsIndexRouteImport } from './routes/circuits.index'
 import { Route as CircuitsSlugRouteImport } from './routes/circuits.$slug'
@@ -23,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ActivitesRoute = ActivitesRouteImport.update({
   id: '/activites',
   path: '/activites',
@@ -31,6 +44,41 @@ const ActivitesRoute = ActivitesRouteImport.update({
 const CarteRoute = CarteRouteImport.update({
   id: '/carte',
   path: '/carte',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CgvRoute = CgvRouteImport.update({
+  id: '/cgv',
+  path: '/cgv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompteRoute = CompteRouteImport.update({
+  id: '/compte',
+  path: '/compte',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnexionRoute = ConnexionRouteImport.update({
+  id: '/connexion',
+  path: '/connexion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReservationRoute = ReservationRouteImport.update({
+  id: '/reservation',
+  path: '/reservation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
@@ -61,8 +109,16 @@ const MotosSlugRoute = MotosSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/activites': typeof ActivitesRoute
   '/carte': typeof CarteRoute
+  '/cgv': typeof CgvRoute
+  '/compte': typeof CompteRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/connexion': typeof ConnexionRoute
+  '/contact': typeof ContactRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/reservation': typeof ReservationRoute
   '/api/chat': typeof ApiChatRoute
   '/circuits/$slug': typeof CircuitsSlugRoute
   '/motos/$slug': typeof MotosSlugRoute
@@ -71,8 +127,16 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/activites': typeof ActivitesRoute
   '/carte': typeof CarteRoute
+  '/cgv': typeof CgvRoute
+  '/compte': typeof CompteRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/connexion': typeof ConnexionRoute
+  '/contact': typeof ContactRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/reservation': typeof ReservationRoute
   '/api/chat': typeof ApiChatRoute
   '/circuits/$slug': typeof CircuitsSlugRoute
   '/motos/$slug': typeof MotosSlugRoute
@@ -82,8 +146,16 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/activites': typeof ActivitesRoute
   '/carte': typeof CarteRoute
+  '/cgv': typeof CgvRoute
+  '/compte': typeof CompteRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/connexion': typeof ConnexionRoute
+  '/contact': typeof ContactRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/reservation': typeof ReservationRoute
   '/api/chat': typeof ApiChatRoute
   '/circuits/$slug': typeof CircuitsSlugRoute
   '/motos/$slug': typeof MotosSlugRoute
@@ -94,8 +166,16 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/a-propos'
     | '/activites'
     | '/carte'
+    | '/cgv'
+    | '/compte'
+    | '/confidentialite'
+    | '/connexion'
+    | '/contact'
+    | '/mentions-legales'
+    | '/reservation'
     | '/api/chat'
     | '/circuits/$slug'
     | '/motos/$slug'
@@ -104,8 +184,16 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/a-propos'
     | '/activites'
     | '/carte'
+    | '/cgv'
+    | '/compte'
+    | '/confidentialite'
+    | '/connexion'
+    | '/contact'
+    | '/mentions-legales'
+    | '/reservation'
     | '/api/chat'
     | '/circuits/$slug'
     | '/motos/$slug'
@@ -114,8 +202,16 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/a-propos'
     | '/activites'
     | '/carte'
+    | '/cgv'
+    | '/compte'
+    | '/confidentialite'
+    | '/connexion'
+    | '/contact'
+    | '/mentions-legales'
+    | '/reservation'
     | '/api/chat'
     | '/circuits/$slug'
     | '/motos/$slug'
@@ -125,8 +221,16 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
   ActivitesRoute: typeof ActivitesRoute
   CarteRoute: typeof CarteRoute
+  CgvRoute: typeof CgvRoute
+  CompteRoute: typeof CompteRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
+  ConnexionRoute: typeof ConnexionRoute
+  ContactRoute: typeof ContactRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  ReservationRoute: typeof ReservationRoute
   ApiChatRoute: typeof ApiChatRoute
   CircuitsSlugRoute: typeof CircuitsSlugRoute
   MotosSlugRoute: typeof MotosSlugRoute
@@ -143,6 +247,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/activites': {
       id: '/activites'
       path: '/activites'
@@ -155,6 +266,55 @@ declare module '@tanstack/react-router' {
       path: '/carte'
       fullPath: '/carte'
       preLoaderRoute: typeof CarteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cgv': {
+      id: '/cgv'
+      path: '/cgv'
+      fullPath: '/cgv'
+      preLoaderRoute: typeof CgvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compte': {
+      id: '/compte'
+      path: '/compte'
+      fullPath: '/compte'
+      preLoaderRoute: typeof CompteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connexion': {
+      id: '/connexion'
+      path: '/connexion'
+      fullPath: '/connexion'
+      preLoaderRoute: typeof ConnexionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reservation': {
+      id: '/reservation'
+      path: '/reservation'
+      fullPath: '/reservation'
+      preLoaderRoute: typeof ReservationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/chat': {
@@ -197,8 +357,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
   ActivitesRoute: ActivitesRoute,
   CarteRoute: CarteRoute,
+  CgvRoute: CgvRoute,
+  CompteRoute: CompteRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
+  ConnexionRoute: ConnexionRoute,
+  ContactRoute: ContactRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  ReservationRoute: ReservationRoute,
   ApiChatRoute: ApiChatRoute,
   CircuitsSlugRoute: CircuitsSlugRoute,
   MotosSlugRoute: MotosSlugRoute,

@@ -26,5 +26,5 @@ export const site = {
   ],
 } as const;
 
-export const whatsappLink = (message = site.whatsappMessage) =>
+export const whatsappLink = (message: string = site.whatsappMessage) =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
