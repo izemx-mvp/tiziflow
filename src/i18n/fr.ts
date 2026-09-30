@@ -91,7 +91,7 @@ export const fr = {
     faqTitle: "Questions",
     faqFlow: "fréquentes",
     ctaTitle: "Prêt à rouler dans l'Atlas ?",
-    ctaBook: "Réserver maintenant",
+    ctaBookNow: "Réserver maintenant",
     ctaWhatsapp: "Écrire sur WhatsApp",
   },
   faq: [
