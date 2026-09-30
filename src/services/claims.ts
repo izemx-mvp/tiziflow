@@ -8,7 +8,7 @@ export type Claim = {
   id: string;
   reference: string; // RC-2026-XXXX
   ownerEmail: string;
-  bookingRef?: string;
+  bookingRef?: string | undefined;
   category: ClaimCategory;
   subject: string;
   status: ClaimStatus;
@@ -53,7 +53,7 @@ export function getClaim(id: string) {
 
 export async function createClaim(data: {
   ownerEmail: string;
-  bookingRef?: string;
+  bookingRef?: string | undefined;
   category: ClaimCategory;
   subject: string;
   description: string;

@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { Lang } from "@/i18n";
 
-const Client = lazy(() => import("./CircuitMap.client"));
+const Client = lazy(() => import("./CircuitMapView"));
 
 type Props = {
   visible?: string[];
