@@ -3,7 +3,7 @@ import { ComingSoon } from "@/components/layout/ComingSoon";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/reservation")({
-  validateSearch: (s: Record<string, unknown>) => ({
+  validateSearch: (s: Record<string, unknown>): { type?: "moto" | "circuit"; id?: string; date?: string; people?: number } => ({
     type: s["type"] === "circuit" ? ("circuit" as const) : s["type"] === "moto" ? ("moto" as const) : undefined,
     id: typeof s["id"] === "string" ? s["id"] : undefined,
     date: typeof s["date"] === "string" ? s["date"] : undefined,
