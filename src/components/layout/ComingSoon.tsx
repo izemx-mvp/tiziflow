@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { useI18n } from "@/i18n";
+import { useT } from "@/i18n";
 
 export function ComingSoon({ fr, en }: { fr: string; en: string }) {
-  const { lang } = useI18n();
+  const { lang } = useT();
   return (
     <section className="bg-sand section-y">
       <div className="container-tf max-w-2xl text-center">
