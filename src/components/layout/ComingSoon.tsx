@@ -10,7 +10,10 @@ export function ComingSoon({ fr, en }: { fr: string; en: string }) {
         <p className="mt-4 text-muted-foreground">
           {lang === "fr" ? "Cette page arrive très bientôt." : "This page is coming very soon."}
         </p>
-        <Link to="/" className="mt-8 inline-flex rounded-full bg-terracotta px-6 py-3 font-semibold text-primary-foreground">
+        <Link
+          to="/"
+          className="mt-8 inline-flex rounded-full bg-terracotta px-6 py-3 font-semibold text-primary-foreground"
+        >
           {lang === "fr" ? "Retour à l'accueil" : "Back to home"}
         </Link>
       </div>

@@ -105,13 +105,15 @@ export function FlowHeading({
 
 export function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
   const reduced = useReducedMotion();
-  if (reduced) return <span>{value}{suffix}</span>;
+  if (reduced)
+    return (
+      <span>
+        {value}
+        {suffix}
+      </span>
+    );
   return (
-    <motion.span
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-    >
+    <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
       <motion.span
         initial={{ "--n": 0 } as never}
         whileInView={{ "--n": value } as never}

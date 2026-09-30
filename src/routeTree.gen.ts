@@ -18,11 +18,15 @@ import { Route as CompteRouteImport } from './routes/compte'
 import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as ConnexionRouteImport } from './routes/connexion'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InscriptionRouteImport } from './routes/inscription'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as ReservationRouteImport } from './routes/reservation'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as CircuitsIndexRouteImport } from './routes/circuits.index'
 import { Route as CircuitsSlugRouteImport } from './routes/circuits.$slug'
+import { Route as CompteProfilRouteImport } from './routes/compte.profil'
+import { Route as CompteReclamationsRouteImport } from './routes/compte.reclamations'
+import { Route as CompteReservationsRouteImport } from './routes/compte.reservations'
 import { Route as MotosIndexRouteImport } from './routes/motos.index'
 import { Route as MotosSlugRouteImport } from './routes/motos.$slug'
 
@@ -71,6 +75,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InscriptionRoute = InscriptionRouteImport.update({
+  id: '/inscription',
+  path: '/inscription',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
@@ -96,6 +105,21 @@ const CircuitsSlugRoute = CircuitsSlugRouteImport.update({
   path: '/circuits/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompteProfilRoute = CompteProfilRouteImport.update({
+  id: '/profil',
+  path: '/profil',
+  getParentRoute: () => CompteRoute,
+} as any)
+const CompteReclamationsRoute = CompteReclamationsRouteImport.update({
+  id: '/reclamations',
+  path: '/reclamations',
+  getParentRoute: () => CompteRoute,
+} as any)
+const CompteReservationsRoute = CompteReservationsRouteImport.update({
+  id: '/reservations',
+  path: '/reservations',
+  getParentRoute: () => CompteRoute,
+} as any)
 const MotosIndexRoute = MotosIndexRouteImport.update({
   id: '/motos/',
   path: '/motos/',
@@ -113,14 +137,18 @@ export interface FileRoutesByFullPath {
   '/activites': typeof ActivitesRoute
   '/carte': typeof CarteRoute
   '/cgv': typeof CgvRoute
-  '/compte': typeof CompteRoute
+  '/compte': typeof CompteRouteWithChildren
   '/confidentialite': typeof ConfidentialiteRoute
   '/connexion': typeof ConnexionRoute
   '/contact': typeof ContactRoute
+  '/inscription': typeof InscriptionRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/reservation': typeof ReservationRoute
   '/api/chat': typeof ApiChatRoute
   '/circuits/$slug': typeof CircuitsSlugRoute
+  '/compte/profil': typeof CompteProfilRoute
+  '/compte/reclamations': typeof CompteReclamationsRoute
+  '/compte/reservations': typeof CompteReservationsRoute
   '/motos/$slug': typeof MotosSlugRoute
   '/circuits/': typeof CircuitsIndexRoute
   '/motos/': typeof MotosIndexRoute
@@ -131,14 +159,18 @@ export interface FileRoutesByTo {
   '/activites': typeof ActivitesRoute
   '/carte': typeof CarteRoute
   '/cgv': typeof CgvRoute
-  '/compte': typeof CompteRoute
+  '/compte': typeof CompteRouteWithChildren
   '/confidentialite': typeof ConfidentialiteRoute
   '/connexion': typeof ConnexionRoute
   '/contact': typeof ContactRoute
+  '/inscription': typeof InscriptionRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/reservation': typeof ReservationRoute
   '/api/chat': typeof ApiChatRoute
   '/circuits/$slug': typeof CircuitsSlugRoute
+  '/compte/profil': typeof CompteProfilRoute
+  '/compte/reclamations': typeof CompteReclamationsRoute
+  '/compte/reservations': typeof CompteReservationsRoute
   '/motos/$slug': typeof MotosSlugRoute
   '/circuits': typeof CircuitsIndexRoute
   '/motos': typeof MotosIndexRoute
@@ -150,14 +182,18 @@ export interface FileRoutesById {
   '/activites': typeof ActivitesRoute
   '/carte': typeof CarteRoute
   '/cgv': typeof CgvRoute
-  '/compte': typeof CompteRoute
+  '/compte': typeof CompteRouteWithChildren
   '/confidentialite': typeof ConfidentialiteRoute
   '/connexion': typeof ConnexionRoute
   '/contact': typeof ContactRoute
+  '/inscription': typeof InscriptionRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/reservation': typeof ReservationRoute
   '/api/chat': typeof ApiChatRoute
   '/circuits/$slug': typeof CircuitsSlugRoute
+  '/compte/profil': typeof CompteProfilRoute
+  '/compte/reclamations': typeof CompteReclamationsRoute
+  '/compte/reservations': typeof CompteReservationsRoute
   '/motos/$slug': typeof MotosSlugRoute
   '/circuits/': typeof CircuitsIndexRoute
   '/motos/': typeof MotosIndexRoute
@@ -174,10 +210,14 @@ export interface FileRouteTypes {
     | '/confidentialite'
     | '/connexion'
     | '/contact'
+    | '/inscription'
     | '/mentions-legales'
     | '/reservation'
     | '/api/chat'
     | '/circuits/$slug'
+    | '/compte/profil'
+    | '/compte/reclamations'
+    | '/compte/reservations'
     | '/motos/$slug'
     | '/circuits/'
     | '/motos/'
@@ -192,10 +232,14 @@ export interface FileRouteTypes {
     | '/confidentialite'
     | '/connexion'
     | '/contact'
+    | '/inscription'
     | '/mentions-legales'
     | '/reservation'
     | '/api/chat'
     | '/circuits/$slug'
+    | '/compte/profil'
+    | '/compte/reclamations'
+    | '/compte/reservations'
     | '/motos/$slug'
     | '/circuits'
     | '/motos'
@@ -210,10 +254,14 @@ export interface FileRouteTypes {
     | '/confidentialite'
     | '/connexion'
     | '/contact'
+    | '/inscription'
     | '/mentions-legales'
     | '/reservation'
     | '/api/chat'
     | '/circuits/$slug'
+    | '/compte/profil'
+    | '/compte/reclamations'
+    | '/compte/reservations'
     | '/motos/$slug'
     | '/circuits/'
     | '/motos/'
@@ -225,10 +273,11 @@ export interface RootRouteChildren {
   ActivitesRoute: typeof ActivitesRoute
   CarteRoute: typeof CarteRoute
   CgvRoute: typeof CgvRoute
-  CompteRoute: typeof CompteRoute
+  CompteRoute: typeof CompteRouteWithChildren
   ConfidentialiteRoute: typeof ConfidentialiteRoute
   ConnexionRoute: typeof ConnexionRoute
   ContactRoute: typeof ContactRoute
+  InscriptionRoute: typeof InscriptionRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   ReservationRoute: typeof ReservationRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -303,6 +352,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inscription': {
+      id: '/inscription'
+      path: '/inscription'
+      fullPath: '/inscription'
+      preLoaderRoute: typeof InscriptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mentions-legales': {
       id: '/mentions-legales'
       path: '/mentions-legales'
@@ -338,6 +394,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CircuitsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compte/profil': {
+      id: '/compte/profil'
+      path: '/profil'
+      fullPath: '/compte/profil'
+      preLoaderRoute: typeof CompteProfilRouteImport
+      parentRoute: typeof CompteRoute
+    }
+    '/compte/reclamations': {
+      id: '/compte/reclamations'
+      path: '/reclamations'
+      fullPath: '/compte/reclamations'
+      preLoaderRoute: typeof CompteReclamationsRouteImport
+      parentRoute: typeof CompteRoute
+    }
+    '/compte/reservations': {
+      id: '/compte/reservations'
+      path: '/reservations'
+      fullPath: '/compte/reservations'
+      preLoaderRoute: typeof CompteReservationsRouteImport
+      parentRoute: typeof CompteRoute
+    }
     '/motos/': {
       id: '/motos/'
       path: '/motos'
@@ -355,16 +432,32 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface CompteRouteChildren {
+  CompteProfilRoute: typeof CompteProfilRoute
+  CompteReclamationsRoute: typeof CompteReclamationsRoute
+  CompteReservationsRoute: typeof CompteReservationsRoute
+}
+
+const CompteRouteChildren: CompteRouteChildren = {
+  CompteProfilRoute: CompteProfilRoute,
+  CompteReclamationsRoute: CompteReclamationsRoute,
+  CompteReservationsRoute: CompteReservationsRoute,
+}
+
+const CompteRouteWithChildren =
+  CompteRoute._addFileChildren(CompteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
   ActivitesRoute: ActivitesRoute,
   CarteRoute: CarteRoute,
   CgvRoute: CgvRoute,
-  CompteRoute: CompteRoute,
+  CompteRoute: CompteRouteWithChildren,
   ConfidentialiteRoute: ConfidentialiteRoute,
   ConnexionRoute: ConnexionRoute,
   ContactRoute: ContactRoute,
+  InscriptionRoute: InscriptionRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   ReservationRoute: ReservationRoute,
   ApiChatRoute: ApiChatRoute,

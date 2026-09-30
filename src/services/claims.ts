@@ -83,7 +83,11 @@ export async function replyToClaim(id: string, text: string) {
   writeAll(
     readAll().map((c) =>
       c.id === id
-        ? { ...c, updatedAt: now, messages: [...c.messages, { from: "client" as const, text, at: now }] }
+        ? {
+            ...c,
+            updatedAt: now,
+            messages: [...c.messages, { from: "client" as const, text, at: now }],
+          }
         : c,
     ),
   );

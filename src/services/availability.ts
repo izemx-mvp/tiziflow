@@ -15,7 +15,8 @@ export function getAvailability(dateISO: string, itemId: string, capacity = 8) {
   const past = new Date(dateISO) < new Date(new Date().toDateString());
   if (past) return { level: "full" as AvailabilityLevel, remaining: 0, capacity };
   const bucket = h % 10;
-  if (bucket === 0 || bucket === 1) return { level: "full" as AvailabilityLevel, remaining: 0, capacity };
+  if (bucket === 0 || bucket === 1)
+    return { level: "full" as AvailabilityLevel, remaining: 0, capacity };
   if (bucket <= 4) {
     const remaining = 1 + (h % 2);
     return { level: "few" as AvailabilityLevel, remaining, capacity };

@@ -32,7 +32,10 @@ export const activities: Activity[] = [
     title: { fr: "Pique-nique en montagne", en: "Mountain picnic" },
     image: "activity-picnic",
     icon: "UtensilsCrossed",
-    short: { fr: "Pause repas préparée sur le parcours.", en: "A prepared meal stop on the route." },
+    short: {
+      fr: "Pause repas préparée sur le parcours.",
+      en: "A prepared meal stop on the route.",
+    },
     text: {
       fr: "Une pause repas installée sur un point calme du parcours. Contenu exemple à remplacer.",
       en: "A meal break set up at a quiet point on the route. Sample content to replace.",
@@ -112,7 +115,10 @@ export const activities: Activity[] = [
     title: { fr: "Hébergement partenaire", en: "Partner stay" },
     image: "about-eco",
     icon: "BedDouble",
-    short: { fr: "Nuit chez un partenaire (placeholder).", en: "Night at a partner (placeholder)." },
+    short: {
+      fr: "Nuit chez un partenaire (placeholder).",
+      en: "Night at a partner (placeholder).",
+    },
     text: {
       fr: "Option d'hébergement pour les circuits multi-jours. Détails à confirmer par l'agence. Contenu exemple à remplacer.",
       en: "Accommodation option for multi-day circuits. Details to be confirmed by the agency. Sample content to replace.",

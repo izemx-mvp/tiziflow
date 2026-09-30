@@ -14,7 +14,9 @@ export function CircuitCard({ circuit, dark }: { circuit: Circuit; dark?: boolea
     <article
       className={cn(
         "group flex h-full flex-col overflow-hidden rounded-2xl border shadow-sm transition-all duration-300 hover:-translate-y-1.5",
-        dark ? "border-white/10 bg-white/5 text-white" : "border-petrol/10 bg-white hover:shadow-warm",
+        dark
+          ? "border-white/10 bg-white/5 text-white"
+          : "border-petrol/10 bg-white hover:shadow-warm",
       )}
     >
       <div className="relative">

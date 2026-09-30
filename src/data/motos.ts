@@ -27,7 +27,14 @@ export const motos: Moto[] = [
     name: "E-Trail 1",
     category: "trail",
     images: ["moto-trail", "moto-trail-detail-1", "moto-trail-detail-2"],
-    specs: { autonomyKm: 110, topSpeedKmh: 90, chargeHours: 4, powerKw: 11, seats: 1, weightKg: 98 },
+    specs: {
+      autonomyKm: 110,
+      topSpeedKmh: 90,
+      chargeHours: 4,
+      powerKw: 11,
+      seats: 1,
+      weightKg: 98,
+    },
     pricePerDay: 900,
     pricePerHalfDay: 550,
     description: {
@@ -48,7 +55,14 @@ export const motos: Moto[] = [
     name: "E-Trail 2",
     category: "trail",
     images: ["moto-trail-2", "moto-trail-detail-1", "moto-trail-detail-2"],
-    specs: { autonomyKm: 130, topSpeedKmh: 100, chargeHours: 5, powerKw: 14, seats: 1, weightKg: 104 },
+    specs: {
+      autonomyKm: 130,
+      topSpeedKmh: 100,
+      chargeHours: 5,
+      powerKw: 14,
+      seats: 1,
+      weightKg: 104,
+    },
     pricePerDay: 1050,
     pricePerHalfDay: 620,
     description: {
@@ -90,7 +104,14 @@ export const motos: Moto[] = [
     name: "E-Comfort",
     category: "confort",
     images: ["moto-comfort", "moto-comfort-detail-1", "moto-comfort-detail-2"],
-    specs: { autonomyKm: 120, topSpeedKmh: 85, chargeHours: 4, powerKw: 10, seats: 2, weightKg: 112 },
+    specs: {
+      autonomyKm: 120,
+      topSpeedKmh: 85,
+      chargeHours: 4,
+      powerKw: 10,
+      seats: 2,
+      weightKg: 112,
+    },
     pricePerDay: 980,
     pricePerHalfDay: 590,
     description: {
@@ -111,7 +132,14 @@ export const motos: Moto[] = [
     name: "E-Adventure",
     category: "trail",
     images: ["moto-adventure", "moto-adventure-detail-1", "moto-adventure-detail-2"],
-    specs: { autonomyKm: 150, topSpeedKmh: 105, chargeHours: 6, powerKw: 16, seats: 1, weightKg: 118 },
+    specs: {
+      autonomyKm: 150,
+      topSpeedKmh: 105,
+      chargeHours: 6,
+      powerKw: 16,
+      seats: 1,
+      weightKg: 118,
+    },
     pricePerDay: 1200,
     pricePerHalfDay: 700,
     description: {

@@ -29,7 +29,10 @@ export function MotoCard({ moto }: { moto: Moto }) {
       <div className="p-5">
         <h3 className="font-display text-xl font-bold text-petrol">{moto.name}</h3>
         <div className="mt-3 flex flex-wrap gap-2">
-          <Chip icon={<BatteryCharging className="h-3.5 w-3.5" />} label={`${moto.specs.autonomyKm} km`} />
+          <Chip
+            icon={<BatteryCharging className="h-3.5 w-3.5" />}
+            label={`${moto.specs.autonomyKm} km`}
+          />
           <Chip icon={<Gauge className="h-3.5 w-3.5" />} label={`${moto.specs.topSpeedKmh} km/h`} />
           <Chip icon={<Plug className="h-3.5 w-3.5" />} label={`${moto.specs.chargeHours} h`} />
         </div>

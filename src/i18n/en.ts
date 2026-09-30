@@ -109,7 +109,10 @@ export const en: Dict = {
       q: "How do I cancel a booking?",
       a: "Cancellation is done from the client area. Conditions will be specified by the agency. (Placeholder to complete.)",
     },
-    { q: "Which languages do you speak?", a: "French, English and Arabic. (Placeholder to complete.)" },
+    {
+      q: "Which languages do you speak?",
+      a: "French, English and Arabic. (Placeholder to complete.)",
+    },
   ],
   booking: {
     title: "Booking",

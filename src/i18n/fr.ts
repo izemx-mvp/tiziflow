@@ -175,5 +175,9 @@ export const fr = {
   },
 } as const;
 
-type Widen<T> = T extends string ? string : T extends readonly (infer U)[] ? readonly Widen<U>[] : { [K in keyof T]: Widen<T[K]> };
+type Widen<T> = T extends string
+  ? string
+  : T extends readonly (infer U)[]
+    ? readonly Widen<U>[]
+    : { [K in keyof T]: Widen<T[K]> };
 export type Dict = Widen<typeof fr>;

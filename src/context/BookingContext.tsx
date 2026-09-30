@@ -153,7 +153,8 @@ export function computeTotal(state: BookingState) {
     }
   }
 
-  const persons = state.type === "circuit" ? Math.max(1, state.people) : Math.max(1, state.quantity);
+  const persons =
+    state.type === "circuit" ? Math.max(1, state.people) : Math.max(1, state.quantity);
   for (const slug of state.addons) {
     const a = activities.find((x) => x.slug === slug);
     if (a) total += a.price * persons;

@@ -55,7 +55,9 @@ export function getBooking(id: string): Booking | undefined {
   return readAll().find((b) => b.id === id || b.reference === id);
 }
 
-export async function createBooking(data: Omit<Booking, "id" | "reference" | "createdAt" | "status">) {
+export async function createBooking(
+  data: Omit<Booking, "id" | "reference" | "createdAt" | "status">,
+) {
   await delay(400);
   const booking: Booking = {
     ...data,

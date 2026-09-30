@@ -3,13 +3,7 @@ import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
 /** Amazigh-inspired geometric band (chevrons + diamonds), like the logo band. */
-export function AmazighBand({
-  className,
-  height = 14,
-}: {
-  className?: string;
-  height?: number;
-}) {
+export function AmazighBand({ className, height = 14 }: { className?: string; height?: number }) {
   return (
     <div
       className={cn("w-full", className)}

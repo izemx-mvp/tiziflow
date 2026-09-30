@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/tiziflow-logo.png";
 import { cn } from "@/lib/utils";
 
 /**
@@ -26,7 +26,7 @@ export function Logo({
       )}
     >
       <img
-        src={logo.url}
+        src={logo}
         alt="TiziFlow"
         className={cn("h-11 w-auto object-contain", imgClassName)}
         width={120}
